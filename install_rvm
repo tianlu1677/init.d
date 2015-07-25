@@ -14,10 +14,23 @@ echo "--------------------------------------------------------------------------
 echo ""
 echo "Now you can use rvm command to install ruby"
 echo ""
-echo "source ~/.bashrc"
-echo "rvm pkg install readline"
-echo "rvm install 2.1.0"
-echo "rvm use 2.1.0 --default"
-echo ""
+echo "install ruby2.2.1 and rails"
+source ~/.bashrc
+rvm pkg install readline
+rvm install 2.2.1
+rvm use 2.2.1 --default
+ruby -v
+gem -v
+gem install bundle
+
+echo "install rails"
+gem install rails
+rails -v
+
+# echo "source ~/.bashrc"
+# echo "rvm pkg install readline"
+# echo "rvm install 2.2.1"
+# echo "rvm use 2.2.1 --default"
+echo "done------"
 echo ""
 echo ""
