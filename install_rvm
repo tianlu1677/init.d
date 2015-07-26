@@ -1,7 +1,6 @@
 echo "Install RVM"
 echo ""
-# \curl -L https://get.rvm.io | bash -s stable
-curl -sSL https://rvm.io/mpapis.asc | gpg --import -
+curl -L https://get.rvm.io | bash -s stable
 echo '[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"' >>~/.bashrc
 source ~/.bashrc
 echo ""
