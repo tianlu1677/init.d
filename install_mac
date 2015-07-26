@@ -1,0 +1,47 @@
+echo "-----------------------------------------------"
+echo "install ruby on rails on mac, wating"
+echo "may be you should key true or return"
+echo "install readline"
+xcode-select --install
+echo "install homebrew"
+rub -v
+ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)"
+
+echo "----------------------------------"
+echo " start install rvm"
+curl -L https://get.rvm.io | bash -s stable
+source ~/.rvm/scripts/rvm
+source ~/.bash_profile
+source ~/.bashrc
+ sed -i -e 's/ftp\.ruby-lang\.org\/pub\/ruby/ruby\.taobao\.org\/mirrors\/ruby/g' ~/.rvm/config/db
+rvm -v
+
+echo "-----------------------------------"
+echo "start install ruby2.2.1"
+rvm install 2.2.1
+rvm use 2.2.1 --default 
+echo "start install rails"
+
+echo "----------------------------------"
+echo "start install psotgres"
+brew install postgresql
+initdb /usr/local/var/postgres -E utf8
+ln -sfv /usr/local/opt/postgresql/*.plist ~/Library/LaunchAgents
+launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist
+
+echo "----------------------------------"
+echo "install node and nodejs"
+brew install nodejs
+brew install node
+
+echo "-------------------------------"
+echo "for special, install imagemagick and ghostscript"
+brew install imagemagick
+brew install ghostscript
+
+echo "--------------------------------------"
+echo "start install oh-my-zsh and change base to zsh"
+brew install zsh
+chsh -s /bin/zsh
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
