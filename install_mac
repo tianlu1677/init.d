@@ -1,3 +1,8 @@
+echo "if you dont have git on mac run"
+echo "ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+"
+echo "brew install git"
+
 echo "-----------------------------------------------"
 echo "install ruby on rails on mac, wating"
 echo "may be you should key true or return"
@@ -5,7 +10,7 @@ echo "install readline"
 xcode-select --install
 echo "install homebrew"
 rub -v
-ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go/install)"
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
 echo "----------------------------------"
 echo " start install rvm"
@@ -13,8 +18,12 @@ curl -L https://get.rvm.io | bash -s stable
 source ~/.rvm/scripts/rvm
 source ~/.bash_profile
 source ~/.bashrc
- sed -i -e 's/ftp\.ruby-lang\.org\/pub\/ruby/ruby\.taobao\.org\/mirrors\/ruby/g' ~/.rvm/config/db
+sed -i -e 's/ftp\.ruby-lang\.org\/pub\/ruby/ruby\.taobao\.org\/mirrors\/ruby/g' ~/.rvm/config/db
 rvm -v
+
+echo "-----------------------------------"
+echo "install git"
+brew install git
 
 echo "-----------------------------------"
 echo "start install ruby2.2.1"
